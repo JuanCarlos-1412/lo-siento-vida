@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(135deg, #24000d, #85002f, #160007);
+
+    font-family: Arial, sans-serif;
+
+    color: white;
+
+    overflow: hidden;
+}
+
+.contenedor {
+    text-align: center;
+
+    width: 100%;
+}
+
+h1 {
+    font-size: 36px;
+
+    margin-bottom: 10px;
+
+    text-shadow: 0 0 20px #ff4775;
+}
+
+.indicacion {
+    font-size: 18px;
+
+    margin-bottom: 40px;
+}
+
+/* =========================
+   SOBRE
+========================= */
+
+.sobre {
+    position: relative;
+
+    width: 340px;
+    height: 230px;
+
+    margin: auto;
+
+    background: #d62855;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+
+    overflow: visible;
+}
+
+/* =========================
+   CARTA
+========================= */
+
+.carta {
+    position: absolute;
+
+    width: 300px;
+
+    height: 200px;
+
+    left: 20px;
+
+    bottom: 10px;
+
+    background: #fffaf2;
+
+    color: #421522;
+
+    border-radius: 5px;
+
+    padding: 25px;
+
+    text-align: left;
+
+    z-index: 2;
+
+    overflow: hidden;
+
+    transition: 
+        bottom 1s ease,
+        height 1s ease;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+
+.carta h2 {
+    text-align: center;
+
+    color: #d62855;
+
+    margin-bottom: 15px;
+}
+
+.carta p {
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    margin-bottom: 12px;
+}
+
+.final {
+    text-align: center;
+
+    font-weight: bold;
+
+    color: #d62855;
+}
+
+/* =========================
+   TAPA
+========================= */
+
+.tapa {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left: 170px solid transparent;
+    border-right: 170px solid transparent;
+    border-top: 120px solid #ff6689;
+
+    z-index: 5;
+
+    transform-origin: top center;
+
+    transition: transform 0.8s ease;
+}
+
+/* =========================
+   CORAZÓN
+========================= */
+
+.corazon {
+    position: absolute;
+
+    left: 50%;
+    top: 90px;
+
+    transform: translateX(-50%);
+
+    font-size: 50px;
+
+    z-index: 10;
+
+    transition: opacity 0.4s;
+}
+
+/* =========================
+   SOBRE ABIERTO
+========================= */
+
+.sobre.abierto .tapa {
+    transform: rotateX(180deg);
+}
+
+/* AQUÍ SALE LA CARTA */
+
+.sobre.abierto .carta {
+    bottom: 120px;
+
+    height: 500px;
+
+    z-index: 8;
+}
+
+/* OCULTAR CORAZÓN */
+
+.sobre.abierto .corazon {
+    opacity: 0;
+}
+
+/* =========================
+   BOTÓN MÚSICA
+========================= */
+
+#musicaBtn {
+    margin-top: 60px;
+
+    padding: 14px 28px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #ff4775;
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 20px rgba(255,71,117,0.4);
+
+    transition: 0.3s;
+}
+
+#musicaBtn:hover {
+    transform: scale(1.08);
+
+    background: #ff285e;
+}
